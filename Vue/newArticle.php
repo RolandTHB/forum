@@ -1,10 +1,11 @@
-
-
 <?php
 require 'Part/headerHtml.php';
 ?>
 
 <body>
+<?php
+require 'Part/navbar.php';
+?>
 <div class="container text-center ">
     <row class="col-md-6">
         <h1>Mon super forum !</h1>

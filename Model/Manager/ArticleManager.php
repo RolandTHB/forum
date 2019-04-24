@@ -6,6 +6,15 @@ class ArticleManager extends DbManager {
         parent::__construct();
     }
 
+    public function select($id){
+        $query ='SELECT * FROM `Article` WHERE id='.$id;
+        $res = $this->bdd->query($query);
+        $res -> execute();
+        $data = $res -> fetch();
+        $article = new Article($data['id'], $data['titre'],$data['contenu'], $data['date_creation_fr']);
+        return $article;
+    }
+
     public function selectAll(){
         $query ='SELECT * FROM Article';
         $res = $this->bdd->query($query);

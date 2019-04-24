@@ -29,6 +29,8 @@ class ArticleController
     public function UpdateArticleAction($id)
     {//le param est utilisé dans mon form avec le $_GET
         // je redirige vers la page de mon formulaire
+        $articleManager = new ArticleManager();
+        $article = $articleManager->select($id);
         require 'Vue/updateArticle.php';
     }
 

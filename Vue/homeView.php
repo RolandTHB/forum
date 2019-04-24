@@ -3,6 +3,9 @@ require 'Part/headerHtml.php';
 ?>
 
 <body>
+<?php
+require 'Part/navbar.php';
+?>
 <div class="container text-center ">
     <row class="col-md-6">
         <h1>Mon super forum !</h1>
@@ -22,7 +25,13 @@ require 'Part/headerHtml.php';
                     <p class="card-text"><?php
                         echo nl2br(htmlspecialchars($article->getContenu()));
                         ?></p>
-                    <a href="#" class="card-link">Commentaires</a><br/>
+                    <a href="#" class="card-link">Commentaires</a>
+                    <button type="submit">
+                        <a href="#">
+                            <i class="fa fa-plus"></i>
+                            Ajouter un commentaire
+                        </a>
+                    </button><br/>
                         <button type="submit">
                             <a href="/forum/index.php?controller=article&action=newArticle">
                                 <i class="fa fa-plus"></i>
@@ -39,7 +48,7 @@ require 'Part/headerHtml.php';
                     </div>
                     <div>
                         <button type="submit">
-                            <a href='/forum/index.php?controller=article&action=updateArticle&id=<?php echo $article->getId()?>"'>
+                            <a href='/forum/index.php?controller=article&action=updateArticle&id=<?php echo $article->getId()?>'>
                                 <i class="fa fa-edit"></i>
                                 Mettre à jour un article
                             </a>
