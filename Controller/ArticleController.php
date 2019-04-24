@@ -25,6 +25,20 @@ class ArticleController
         $articleManager->deleteArticle($id);
         header("Location:  http://localhost/forum/index.php?controller=index&action=renderIndex");
 
+    }
+    public function UpdateArticleAction($id)
+    {//le param est utilisé dans mon form avec le $_GET
+        // je redirige vers la page de mon formulaire
+        require 'Vue/updateArticle.php';
+    }
+
+    public function UpdateFormArticleAction($id)
+    {
+        $articleManager = new ArticleManager();
+        $article = new Article($id, $_POST['titre'], $_POST['contenu'],null);
+        $articleManager->updateArticle($article);
+        // appeler l'article manager pour update en base l'article
+        header("Location:  http://localhost/forum/index.php?controller=index&action=renderIndex");
 
     }
 

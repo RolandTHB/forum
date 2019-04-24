@@ -35,4 +35,14 @@ class ArticleManager extends DbManager {
         var_dump("Article delete");
     }
 
+    public function updateArticle(Article $article)
+    {
+        $query = "UPDATE `Article` SET `titre`='".$article->getTitre()."',
+                                        `contenu`='".$article->getContenu()."'
+                                        WHERE `id`=".$article->getId();
+        $res = $this->bdd->prepare($query);
+        $res->execute();
+        var_dump("Article update");
+    }
+
 }

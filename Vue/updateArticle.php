@@ -1,5 +1,4 @@
 
-
 <?php
 require 'Part/headerHtml.php';
 ?>
@@ -8,10 +7,10 @@ require 'Part/headerHtml.php';
 <div class="container text-center ">
     <row class="col-md-6">
         <h1>Mon super forum !</h1>
-       <p>New Article.php success</p>
+        <p>Update Article.php success</p>
     </row>
 
-    <form method="post" action="/forum/index.php?controller=article&action=formArticle">
+    <form method="post" action="/forum/index.php?controller=article&action=updateFormArticle&id=<?php echo $id; ?>">
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
             <input name="titre" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
